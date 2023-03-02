@@ -1,16 +1,24 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {
+  BalAccordionModule,
+  BalCoreModule,
+  BalHeadingModule,
+} from '@baloise/design-system-components-angular';
 
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, HelloComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BalCoreModule.forRoot(),
+    BalHeadingModule,
+    BalAccordionModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}
